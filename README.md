@@ -1,2 +1,1 @@
-# DentalApp-Back
-Backend de la aplicación de DentalApp, el cual va a ser realizado en expressJS, Sql server
+# Para correr este proyecto se usa "npm run start" y ya se actualiza el proyecto solo. solamente tienen que guardar los cambios
