@@ -20,7 +20,7 @@ export const makeQuery = async ( query : string ) => {
 
      await sql.connect(sqlConfig)
      const result = await sql.query(query);
-     console.dir(result)
+     //console.dir(result)
      return await result;
     } catch (err) {
      console.log('error en la bd')

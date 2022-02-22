@@ -14,6 +14,7 @@ authRouter.post('/login',
     body('email').isEmail().withMessage('Parametro invalido'),
     body('password').isLength({min: 3, max :12}).withMessage('Parametro invalido'),
     ValidateErrors,
-    validateUser ,login);
+    validateUser,
+    login);
 
 

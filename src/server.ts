@@ -19,7 +19,10 @@ app.use('/api/auth', authRouter);
 app.use('api/admin', adminRouter);
 
 app.listen(8080, () => {
-  console.log('Application started on port 234fsdf4!');
+  console.log('Application started on port 8080!');
 });
+
+
 makeQuery('select @@VERSION');
 //getConection();
+
