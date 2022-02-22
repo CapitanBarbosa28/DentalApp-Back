@@ -1,5 +1,5 @@
 # Proyecto DENTALAPP hecho en Express y SQL server
-# ESTAS INSTRUCCIONES ASUMEN QUE TIENES INSTALADO TYPESCRIPT, NODEJS, UNA INSTANCIA DE SQL SERVER AUTH Y OSTIAS
+# ESTAS INSTRUCCIONES ASUMEN QUE TIENES INSTALADO NODEJS, UNA INSTANCIA DE SQL SERVER AUTH Y OSTIAS
 ### Para correr este proyecto se tiene que clonar el repositorio, usar npm install para instalar las dependencias
 ### Tienes que crear un .env en la carpeta raiz  con la configuración de tu instancia de la base de datos y en connection.ts los va a agarrar solo.
 ## En el .env debe haber un 
@@ -11,3 +11,6 @@
 
 ### Si les sale un error con ts-node, pongan este comando "npm install -g ts-node", esto debido a que typescript pide tenerlo instalado globalmente
 ### Si les sale algún error de la conexión de la BD, impriman en el error en connection.ts y busquen el error que les mande, esto varia según su computadora así que no puedo dar alguna solución 
+
+### https://www.youtube.com/watch?v=YOaC_TyOrdk&t=387s Se recomienda este link para instalar SQL Server
+### https://nodejs.org/es/ Se recomienda la versión de Node 16.14.0 LTS
