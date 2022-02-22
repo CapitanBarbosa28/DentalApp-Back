@@ -6,5 +6,8 @@
 #### DB_USER="prueba"
 #### DB_PASS="prueba"
 #### DB_NAME="prueba"
-#### DB_SERVER="localhost"
+#### DB_SERVER="prueba"
 ### escribir en la terminal "npm run start" y ya se actualiza el proyecto cada que lo guardas.
+
+### Si les sale un error con ts-node, pongan este comando "npm install -g ts-node", esto debido a que typescript pide tenerlo instalado globalmente
+### Si les sale algún error de la conexión de la BD, impriman en el error en connection.ts y busquen el error que les mande, esto varia según su computadora así que no puedo dar alguna solución 
