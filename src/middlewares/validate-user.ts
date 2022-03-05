@@ -11,7 +11,7 @@ import { getAdminInfo } from '../database/admin/getAdminInfo';
 export const validateUser = async (req: TypedRequestBody<loginREQ>, res: Response,next : NextFunction) => {
     const { email, password } = req.body;
 
-    const valid : IResult<any> | undefined = await makeQuery(`SELECT role_id FROM [User] WHERE email='${email}' AND password='${password}'`);
+    const valid : IResult<any> | undefined = await makeQuery(`SELECT role_id FROM [User] WHERE email='${email}' AND password='${password}' and is_active=1  `);
 
     if(valid === undefined || valid.rowsAffected[0] ===0){
         console.log(valid);

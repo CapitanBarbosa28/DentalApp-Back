@@ -16,7 +16,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.use('/api/auth', authRouter);
-app.use('api/admin', adminRouter);
+app.use('/api/admin', adminRouter);
 
 app.listen(8080, () => {
   console.log('Application started on port 8080!');

@@ -1,7 +1,7 @@
 import { makeQuery } from "../connection";
 import { IResult } from 'mssql';
-import { AdminDTO } from "src/interfaces/Admin.interface";
-
+import { AdminDTO } from "../../interfaces/Admin.interface";
+import { Roles } from "../../interfaces/RolesEnum";
 
 export const getAdminInfo = async ( email : string, password: string  ): Promise<IResult<AdminDTO> | undefined >  => {
     const data = await makeQuery(`
@@ -12,3 +12,4 @@ export const getAdminInfo = async ( email : string, password: string  ): Promise
     WHERE [User].email='${email}' AND [User].password='${password}'`);
     return data;
 }
+
