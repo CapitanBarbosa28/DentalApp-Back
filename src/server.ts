@@ -6,9 +6,16 @@ import { makeQuery } from './database/connection';
 import {authRouter} from './routes/auth.router';
 import { adminRouter } from './routes/admin.router';
 
+import cors from 'cors';
 const app = express();
 dotenv.config();
+const allowedOrigins = ['http://localhost:3000'];
 
+const options: cors.CorsOptions = {
+  origin: allowedOrigins
+};
+
+app.use(cors(options));
 app.use( express.json() )
 
 app.get('/', (req: Request, res: Response) => {
