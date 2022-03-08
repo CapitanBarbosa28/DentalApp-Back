@@ -15,7 +15,7 @@ export const login = async (req : TypedRequestBody<loginREQ>, res : Response) =>
     console.log(req.data?.recordset[0].email);
     res.status(200).json({
         ok: true,
-        msg : data?.recordset[0]
+        user : data?.recordset[0],
     })
     
     
