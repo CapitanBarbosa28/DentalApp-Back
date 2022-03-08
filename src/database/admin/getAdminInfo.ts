@@ -10,6 +10,7 @@ export const getAdminInfo = async ( email : string, password: string  ): Promise
     INNER JOIN [Role] ON [User].role_id = [Role].id
     INNER JOIN [Subsidiary] ON [User].subsidiary_id = [Subsidiary].id
     WHERE [User].email='${email}' AND [User].password='${password}'`);
+
     return data;
 }
 
