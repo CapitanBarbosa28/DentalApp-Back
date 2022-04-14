@@ -56,3 +56,8 @@ export const deleteSecretary = async ( req : Request, res : Response) => {
 }
 
 
+export const getAllAppointments  = async (req : Request, res : Response) => {
+
+}
+
+

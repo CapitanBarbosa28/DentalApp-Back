@@ -24,6 +24,7 @@ export const makeQuery = async ( query : string ) => {
      return await result;
     } catch (err) {
      console.log('error en la bd')
+     console.log(err)
     }
    }
 
