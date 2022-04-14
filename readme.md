@@ -14,3 +14,4 @@
 
 ### https://www.youtube.com/watch?v=YOaC_TyOrdk&t=387s Se recomienda este link para instalar SQL Server
 ### https://nodejs.org/es/ Se recomienda la versión de Node 16.14.0 LTS
+### Para obtener la base de datos, consulte con las personas del equipo.
