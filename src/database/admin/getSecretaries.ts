@@ -5,7 +5,7 @@ import { SecretaryDTO } from "../../interfaces/Secretary.interface";
 
 export const getSecretaries = async () : Promise<IResult<SecretaryDTO[]> | undefined > => {
     const data = await makeQuery(`
-    SELECT [User].email,[User].[name], [User].profilePic,
+    SELECT [User].id, [User].email,[User].[name], [User].profilePic,
 		[Role].[name] as role_name,
 		[Subsidiary].[name] as subsidiary_name,
 		[Secretary].birth_date,

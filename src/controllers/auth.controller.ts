@@ -11,8 +11,6 @@ export const login = async (req : TypedRequestBody<loginREQ>, res : Response) =>
    
     const { data } = req;
     console.log('entro al controller');
-    console.log(req.data);
-    console.log(req.data?.recordset[0].email);
     res.status(200).json({
         ok: true,
         user : data?.recordset[0],
