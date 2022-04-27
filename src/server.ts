@@ -8,6 +8,7 @@ import { adminRouter } from './routes/admin.router';
 
 import cors from 'cors';
 import { secretaryRouter } from './routes/secretary.router';
+import { doctorRouter } from './routes/doctor.router';
 const app = express();
 dotenv.config();
 const allowedOrigins = ['http://localhost:3000'];
@@ -26,6 +27,7 @@ app.get('/', (req: Request, res: Response) => {
 app.use('/api/auth', authRouter);
 app.use('/api/admin', adminRouter);
 app.use('/api/secretary', secretaryRouter);
+app.use('/api/doctor', doctorRouter);
 
 app.listen(8080, () => {
   console.log('Application started on port 8080!');

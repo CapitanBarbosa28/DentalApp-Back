@@ -1,0 +1,32 @@
+@api = http://localhost:8080/api/secretary/newPatient
+@apiNewPatient = http://localhost:8080/api/secretary/newPatient
+@apiNewAppointment = http://localhost:8080/api/doctor/newAppoinment
+
+GET {{api}}
+
+### create a patient
+POST {{apiNewPatient}}
+Content-Type: application/json
+
+{
+    "birthDate": "20130128",
+    "curp": "REVE001019HNLYLDA2",
+    "name": "Eduardo Reyna",
+    "patientEmail": "eduardoreynav@gmail.com"
+
+}
+
+
+### create an appointment
+POST {{apiNewAppointment}}
+Content-Type: application/json
+
+{
+    "date": "20130128",
+    "status": "Pendiente",
+    "patient_id": 1,
+    "doctor_id": 1,
+    "treatment_id": 23,
+    "radiography_id": 3
+
+}
