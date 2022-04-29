@@ -3,7 +3,7 @@ import { makeQuery } from "../connection";
 
 
 type Appointment = {
-    id : number,
+    id_appointment : number,
     date: Date,
     status: string,
     patient_id : number,
@@ -42,6 +42,15 @@ export class Doctor{
         return newAppointment;
         //return AllApointments;
         
+    }
+
+
+    async deleteAppointmentById( id_appointment : number ){
+        const query = `exec deleteAppointment '${id_appointment}'` 
+        console.log(query)
+        const deleteAppointment = await makeQuery(query);
+        console.log(deleteAppointment);
+        return deleteAppointment;        
     }
 
     // async newExpense( date : Date, money : number, description: string, doctor_id : number   ){

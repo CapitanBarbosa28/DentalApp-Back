@@ -25,6 +25,27 @@ export const createAppointment  = async (req : Request, res : Response) => {
 }
 
 
+
+export const deleteAppointmentById  = async (req : Request, res : Response) => {
+    
+    const { docEmail, id_appointment} = req.body;
+    let doc = new Doctor(docEmail);
+
+    console.log(doc)
+    let result = await doc.deleteAppointmentById(id_appointment)
+    
+    if(result){
+        console.log(result)
+        res.status(200).json({
+            ok: true,
+            msg : result
+        })  
+    }
+
+
+}
+
+
 // export const getPatientInfo  = async (req : Request, res : Response) => {
 
 // }

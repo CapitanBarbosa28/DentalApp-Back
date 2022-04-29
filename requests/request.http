@@ -1,6 +1,7 @@
 @api = http://localhost:8080/api/secretary/newPatient
 @apiNewPatient = http://localhost:8080/api/secretary/newPatient
-@apiNewAppointment = http://localhost:8080/api/doctor/newAppoinment
+@apiNewAppointment = http://localhost:8080/api/doctor/newAppointment
+@apiDeleteAppointment = http://localhost:8080/api/doctor/deleteAppointment
 
 GET {{api}}
 
@@ -29,4 +30,12 @@ Content-Type: application/json
     "treatment_id": 23,
     "radiography_id": 3
 
+}
+
+### DELETE a product by id
+DELETE {{apiDeleteAppointment}}
+Content-Type: application/json
+
+{
+    "id_appointment": 17
 }
