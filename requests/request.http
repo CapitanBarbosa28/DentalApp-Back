@@ -2,6 +2,7 @@
 @apiNewPatient = http://localhost:8080/api/secretary/newPatient
 @apiNewAppointment = http://localhost:8080/api/doctor/newAppointment
 @apiDeleteAppointment = http://localhost:8080/api/doctor/deleteAppointment
+@apiUpdateAppointment = http://localhost:8080/api/doctor/updateAppointment
 
 GET {{api}}
 
@@ -38,4 +39,20 @@ Content-Type: application/json
 
 {
     "id_appointment": 17
+}
+
+
+### create an appointment
+PUT {{apiUpdateAppointment}}
+Content-Type: application/json
+
+{
+    "id_appointment": "6",
+    "date": "20130128",
+    "status": "Pendiente",
+    "patient_id": 1,
+    "doctor_id": 1,
+    "treatment_id": 23,
+    "radiography_id": 3
+
 }

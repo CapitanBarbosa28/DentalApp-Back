@@ -53,6 +53,16 @@ export class Doctor{
         return deleteAppointment;        
     }
 
+
+    async updateAppointment( id_appointment : number, date : Date, status : string, patient_id : number, doctor_id : number, treatment_id : number, radiography_id : number  ){
+        const query = `exec updateAppointment '${id_appointment}','${date}','${status}','${patient_id}','${doctor_id}','${treatment_id}','${radiography_id}'` 
+        console.log(query)
+        const updateAppointment = await makeQuery(query);
+        console.log(updateAppointment);
+        return updateAppointment;
+        //return AllApointments;
+        
+    }
     // async newExpense( date : Date, money : number, description: string, doctor_id : number   ){
     //     const query = `exec newExpense ${doctor_id}, '${description}', ${money}, '${date}'`;
     //     const newExpense = await makeQuery(query);

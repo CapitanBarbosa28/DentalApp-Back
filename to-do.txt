@@ -3,7 +3,7 @@ DOCTOR:
 
 Citas: 
 Un doctor debe de poder CREAR una cita (LISTO)
-Un doctor debe poder BORRAR una cita
-Un doctor debe poder MODIFICAR una cita
+Un doctor debe poder BORRAR una cita (LISTO)
+Un doctor debe poder MODIFICAR una cita (LISTO)
 Un doctor debe de poder VER sus citas(no sé si por día o por semana)
 Un doctor debe de poder VER la información extra de cada cita(procedimiento, radiografías, etc)
