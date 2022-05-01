@@ -17,4 +17,4 @@ Un doctor debe de poder SUBIR una radiografía(checar algún lugar como cloudina
 
 
 Gastos:
-El doctor debe poder ver los gastos que han habido
+El doctor debe poder ver los gastos que han habido (LISTO)

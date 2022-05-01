@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createAppointment, deleteAppointmentById, updateAppointment, viewAllPatients, viewAppointmentsByIdDoctor, viewPatientById } from '../controllers/doctor.controller';
+import { createAppointment, deleteAppointmentById, updateAppointment, viewAllPatients, viewAppointmentsByIdDoctor, viewExpensesByIdDoctor, viewPatientById } from '../controllers/doctor.controller';
 
 
 export const doctorRouter = Router();
@@ -15,6 +15,7 @@ doctorRouter.get('/viewAppointmentsByIdDoctor', viewAppointmentsByIdDoctor );
 doctorRouter.get('/viewAllPatients', viewAllPatients );
 doctorRouter.get('/viewPatientById', viewPatientById );
 
+doctorRouter.get('/viewExpensesByIdDoctor', viewExpensesByIdDoctor );
 
 
 

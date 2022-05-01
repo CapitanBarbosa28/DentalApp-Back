@@ -5,7 +5,9 @@
 @apiUpdateAppointment           = http://localhost:8080/api/doctor/updateAppointment
 @apiViewAppointmentsByIdDoctor  = http://localhost:8080/api/doctor/viewAppointmentsByIdDoctor
 @apiViewAllPatients             = http://localhost:8080/api/doctor/viewAllPatients 
-@apiViewPatientById            = http://localhost:8080/api/doctor/viewPatientById 
+@apiViewPatientById             = http://localhost:8080/api/doctor/viewPatientById 
+@apiViewExpensesByIdDoctor      = http://localhost:8080/api/doctor/viewExpensesByIdDoctor 
+
 
 
 
@@ -82,4 +84,13 @@ Content-Type: application/json
 
 {
     "patient_id": 3
+}
+
+
+### View expendes By Doctor Id
+GET {{apiViewExpensesByIdDoctor}}
+Content-Type: application/json
+
+{
+    "doctor_id": 1
 }
