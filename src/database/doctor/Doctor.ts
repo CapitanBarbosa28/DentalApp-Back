@@ -74,6 +74,28 @@ export class Doctor{
         //return AllApointments;
         
     }
+
+
+    async viewAllPatients(){
+        const query = `exec viewAllPatients ` 
+        console.log(query)
+        const viewAllPatients = await makeQuery(query);
+        console.log(viewAllPatients);
+        return viewAllPatients;
+        //return AllApointments;
+        
+    }
+
+
+    async viewPatientById(patient_id : number){
+        const query = `exec viewPatientById '${patient_id}'` 
+        console.log(query)
+        const viewPatientById = await makeQuery(query);
+        console.log(viewPatientById);
+        return viewPatientById;
+        //return AllApointments;
+        
+    }
     // async newExpense( date : Date, money : number, description: string, doctor_id : number   ){
     //     const query = `exec newExpense ${doctor_id}, '${description}', ${money}, '${date}'`;
     //     const newExpense = await makeQuery(query);

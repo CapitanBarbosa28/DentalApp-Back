@@ -7,3 +7,14 @@ Un doctor debe poder BORRAR una cita (LISTO)
 Un doctor debe poder MODIFICAR una cita (LISTO)
 Un doctor debe de poder VER sus citas(no sé si por día o por semana) (LISTO)
 Un doctor debe de poder VER la información extra de cada cita(procedimiento, radiografías, etc)
+
+
+Pacientes:
+Un doctor debe poder ver los pacientes (LISTO)
+Un doctor debe poder ver la información específica de un paciente (LISTO)
+
+Un doctor debe de poder SUBIR una radiografía(checar algún lugar como cloudinary o tinypng o a base64)
+
+
+Gastos:
+El doctor debe poder ver los gastos que han habido

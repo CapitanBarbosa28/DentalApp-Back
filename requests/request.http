@@ -1,9 +1,12 @@
-@api                    = http://localhost:8080/api/secretary/newPatient
-@apiNewPatient          = http://localhost:8080/api/secretary/newPatient
-@apiNewAppointment      = http://localhost:8080/api/doctor/newAppointment
-@apiDeleteAppointment   = http://localhost:8080/api/doctor/deleteAppointment
-@apiUpdateAppointment   = http://localhost:8080/api/doctor/updateAppointment
-@apiViewAppointmentsByIdDoctor   = http://localhost:8080/api/doctor/viewAppointmentsByIdDoctor
+@api                            = http://localhost:8080/api/secretary/newPatient
+@apiNewPatient                  = http://localhost:8080/api/secretary/newPatient
+@apiNewAppointment              = http://localhost:8080/api/doctor/newAppointment
+@apiDeleteAppointment           = http://localhost:8080/api/doctor/deleteAppointment
+@apiUpdateAppointment           = http://localhost:8080/api/doctor/updateAppointment
+@apiViewAppointmentsByIdDoctor  = http://localhost:8080/api/doctor/viewAppointmentsByIdDoctor
+@apiViewAllPatients             = http://localhost:8080/api/doctor/viewAllPatients 
+@apiViewPatientById            = http://localhost:8080/api/doctor/viewPatientById 
+
 
 
 
@@ -66,4 +69,17 @@ Content-Type: application/json
 
 {
     "doctor_id": 3
+}
+
+
+### View All patients
+GET {{apiViewAllPatients}}
+
+
+### View patient By Id
+GET {{apiViewPatientById}}
+Content-Type: application/json
+
+{
+    "patient_id": 3
 }
