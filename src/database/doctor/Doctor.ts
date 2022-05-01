@@ -63,6 +63,17 @@ export class Doctor{
         //return AllApointments;
         
     }
+
+
+    async viewAppointmentsByIdDoctor( doctor_id : number  ){
+        const query = `exec viewAppointmentsByIdDoctor '${doctor_id}'` 
+        console.log(query)
+        const viewAppointmentsByIdDoctor = await makeQuery(query);
+        console.log(viewAppointmentsByIdDoctor);
+        return viewAppointmentsByIdDoctor;
+        //return AllApointments;
+        
+    }
     // async newExpense( date : Date, money : number, description: string, doctor_id : number   ){
     //     const query = `exec newExpense ${doctor_id}, '${description}', ${money}, '${date}'`;
     //     const newExpense = await makeQuery(query);

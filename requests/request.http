@@ -1,8 +1,11 @@
-@api = http://localhost:8080/api/secretary/newPatient
-@apiNewPatient = http://localhost:8080/api/secretary/newPatient
-@apiNewAppointment = http://localhost:8080/api/doctor/newAppointment
-@apiDeleteAppointment = http://localhost:8080/api/doctor/deleteAppointment
-@apiUpdateAppointment = http://localhost:8080/api/doctor/updateAppointment
+@api                    = http://localhost:8080/api/secretary/newPatient
+@apiNewPatient          = http://localhost:8080/api/secretary/newPatient
+@apiNewAppointment      = http://localhost:8080/api/doctor/newAppointment
+@apiDeleteAppointment   = http://localhost:8080/api/doctor/deleteAppointment
+@apiUpdateAppointment   = http://localhost:8080/api/doctor/updateAppointment
+@apiViewAppointmentsByIdDoctor   = http://localhost:8080/api/doctor/viewAppointmentsByIdDoctor
+
+
 
 GET {{api}}
 
@@ -27,13 +30,13 @@ Content-Type: application/json
     "date": "20130128",
     "status": "Pendiente",
     "patient_id": 1,
-    "doctor_id": 1,
+    "doctor_id": 3,
     "treatment_id": 23,
     "radiography_id": 3
 
 }
 
-### DELETE a product by id
+### DELETE an appointment by id
 DELETE {{apiDeleteAppointment}}
 Content-Type: application/json
 
@@ -42,7 +45,7 @@ Content-Type: application/json
 }
 
 
-### create an appointment
+### Update an appointment
 PUT {{apiUpdateAppointment}}
 Content-Type: application/json
 
@@ -55,4 +58,12 @@ Content-Type: application/json
     "treatment_id": 23,
     "radiography_id": 3
 
+}
+
+### View appointments By Doctor Id
+GET {{apiViewAppointmentsByIdDoctor}}
+Content-Type: application/json
+
+{
+    "doctor_id": 3
 }

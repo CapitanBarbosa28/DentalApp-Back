@@ -66,6 +66,25 @@ export const updateAppointment  = async (req : Request, res : Response) => {
 }
 
 
+export const viewAppointmentsByIdDoctor  = async (req : Request, res : Response) => {
+    
+    const { docEmail, doctor_id } = req.body;
+    let doc = new Doctor(docEmail);
+
+    console.log(doc)
+    let result = await doc.viewAppointmentsByIdDoctor(doctor_id)
+    
+    if(result){
+        console.log(result)
+        res.status(200).json({
+            ok: true,
+            msg : result
+        })  
+    }
+
+
+}
+
 // export const getPatientInfo  = async (req : Request, res : Response) => {
 
 // }
