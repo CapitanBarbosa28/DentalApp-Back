@@ -1,3 +1,5 @@
+# Instalar en plugins de VSCode RestClient
+
 @api                            = http://localhost:8080/api/secretary/newPatient
 @apiNewPatient                  = http://localhost:8080/api/secretary/newPatient
 @apiNewAppointment              = http://localhost:8080/api/doctor/newAppointment
@@ -7,6 +9,8 @@
 @apiViewAllPatients             = http://localhost:8080/api/doctor/viewAllPatients 
 @apiViewPatientById             = http://localhost:8080/api/doctor/viewPatientById 
 @apiViewExpensesByIdDoctor      = http://localhost:8080/api/doctor/viewExpensesByIdDoctor 
+@apiNewRadiography              = http://localhost:8080/api/doctor/newRadiography 
+
 
 
 
@@ -33,7 +37,7 @@ Content-Type: application/json
 
 {
     "date": "20130128",
-    "status": "Pendiente",
+    "status": "Realizado",
     "patient_id": 1,
     "doctor_id": 3,
     "treatment_id": 23,
@@ -93,4 +97,16 @@ Content-Type: application/json
 
 {
     "doctor_id": 1
+}
+
+
+### subir radiografía
+POST {{apiNewRadiography}}
+Content-Type: application/json
+
+{
+    "image_name": "prueba", 
+    "path": "C:/Users/Eduardo/ProyectosReact/UploadImages/nodejs-finterest/src/public/img/uploads/878a54f9-afdd-4665-881b-df6259796548.jpg",
+    "patient_id": 1
+
 }

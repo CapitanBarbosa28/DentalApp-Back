@@ -1,5 +1,23 @@
 import { Response,Request } from "express";
 import { Doctor } from "../database/doctor/Doctor";
+const path          = require('path');
+const { unlink }    = require('fs-extra');
+import { FileWithPath } from "file-selector";
+
+
+const cloudinary    = require('cloudinary');
+
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key:    process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+interface MulterRequest extends Request {
+    file: FileWithPath;
+}
+
+
 
 //TODO: 
 //
@@ -145,20 +163,17 @@ export const viewExpensesByIdDoctor  = async (req : Request, res : Response) => 
 
 }
 
-// export const getPatientInfo  = async (req : Request, res : Response) => {
+export const newRadiography  = async (req : Request, res : Response) => {
 
-// }
+   // const { docEmail, image_name, patient_id } = req.body;
+    //let doc = new Doctor(docEmail);
 
-
-// export const makeAppointment  = async (req : Request, res : Response) => {
-
-// }
-
-// export const getAllAppointmentsByDoctor  = async (req : Request, res : Response) => {
-
-// }
-
-
-// export const deleteAppointment  = async (req : Request, res : Response) => {
-
-// }
+    
+    const result = await cloudinary.v2.uploader.upload((req as MulterRequest).file.path)
+    //let result = await doc.newRadiography(image_name, path_image, patient_id)
+    console.log((req as MulterRequest).file.path)
+    res.send((req as MulterRequest).file.path)
+}
+// public document = async (req: Request, res: Response): Promise<any> => {
+//     const documentFile  = (req as MulterRequest).file;
+//   }

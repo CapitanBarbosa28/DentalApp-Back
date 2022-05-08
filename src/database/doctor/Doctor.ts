@@ -107,6 +107,17 @@ export class Doctor{
         //return AllApointments;
         
     }
+
+    async newRadiography(image_name : string, path : string, patient_id : number){
+        const query = `exec newRadiography '${image_name}','${path}','${patient_id}'` 
+        console.log(query)
+        const newRadiography = await makeQuery(query);
+        console.log(newRadiography);
+        return newRadiography;
+        //return AllApointments;
+        
+    }
+
     // async newExpense( date : Date, money : number, description: string, doctor_id : number   ){
     //     const query = `exec newExpense ${doctor_id}, '${description}', ${money}, '${date}'`;
     //     const newExpense = await makeQuery(query);
