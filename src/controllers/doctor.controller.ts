@@ -165,14 +165,14 @@ export const viewExpensesByIdDoctor  = async (req : Request, res : Response) => 
 
 export const newRadiography  = async (req : Request, res : Response) => {
 
-   // const { docEmail, image_name, patient_id } = req.body;
-    //let doc = new Doctor(docEmail);
+    const { docEmail, image_name, patient_id } = req.body;
+    let doc = new Doctor(docEmail);
 
     
-    const result = await cloudinary.v2.uploader.upload((req as MulterRequest).file.path)
-    //let result = await doc.newRadiography(image_name, path_image, patient_id)
-    console.log((req as MulterRequest).file.path)
-    res.send((req as MulterRequest).file.path)
+    const path = await cloudinary.v2.uploader.upload((req as MulterRequest).file.path)
+    let result = await doc.newRadiography(image_name, path.url, patient_id)
+    console.log(result)
+    res.send(result)
 }
 // public document = async (req: Request, res: Response): Promise<any> => {
 //     const documentFile  = (req as MulterRequest).file;
