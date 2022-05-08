@@ -10,6 +10,7 @@ import cors from 'cors';
 import { secretaryRouter } from './routes/secretary.router';
 import { doctorRouter } from './routes/doctor.router';
 
+// Cloudinary
 const morgan        = require('morgan');
 const multer        = require('multer');
 const uuid          = require('uuid').v4
@@ -27,6 +28,8 @@ const options: cors.CorsOptions = {
 app.use(cors(options));
 app.use( express.json() )
 
+
+// Cloudinary
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 const storage = multer.diskStorage({

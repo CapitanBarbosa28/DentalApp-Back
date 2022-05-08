@@ -168,7 +168,7 @@ export const newRadiography  = async (req : Request, res : Response) => {
     const { docEmail, image_name, patient_id } = req.body;
     let doc = new Doctor(docEmail);
 
-    
+    // Cloudinary
     const path = await cloudinary.v2.uploader.upload((req as MulterRequest).file.path)
     let result = await doc.newRadiography(image_name, path.url, patient_id)
     console.log(result)
