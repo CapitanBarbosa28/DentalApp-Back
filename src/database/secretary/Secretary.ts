@@ -30,9 +30,17 @@ export class Secretary{
     }
 
     async getAllAppointments(){
-        const AllApointments: IResult<Appointment[]> | undefined = await makeQuery('select * from Appointment');
+        try {
+            const AllApointments : IResult<Appointment[]> | undefined= await makeQuery('select * from Appointment');
+            if(!AllApointments){
+                return ;
+            }
+            this.appointments = AllApointments?.recordset;
+        } catch (error) {
+            
+        }
 
-        this.appointments = AllApointments?.recordset;
+        
         //return AllApointments;
         console.log(this.appointments);
         

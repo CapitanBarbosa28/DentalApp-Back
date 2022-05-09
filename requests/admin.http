@@ -1,0 +1,76 @@
+# Instalar en plugins de VSCode RestClient
+
+@api                                       = http://localhost:8080/api/secretary/newPatient
+@apiDeleteDoctor                           = http://localhost:8080/api/admin/deleteDoctor
+@apiActiveDoctor                           = http://localhost:8080/api/admin/activeDoctor
+@apiGetDoctors                             = http://localhost:8080/api/admin/getDoctors
+@apiGetSecretaries                         = http://localhost:8080/api/admin/getSecretaries
+@apiNewDoctor                              = http://localhost:8080/api/admin/createDoctor
+@apiNewSecretary                           = http://localhost:8080/api/admin/createSecretary
+@apiUpdateDoctor                           = http://localhost:8080/api/admin/createSecretary
+@apiUpdateSecretary                        = http://localhost:8080/api/admin/createSecretary
+
+
+
+## Delete doctor
+POST {{apiDeleteDoctor}}
+Content-Type: application/json
+
+{
+    "userid" : "1"
+}
+
+### apiactiveDoctor
+POST {{apiActiveDoctor}}
+Content-Type: application/json
+
+{
+    "userid" : "1"
+
+}
+
+
+### apiGetDoctors
+GET {{apiGetDoctors}}
+Content-Type: application/json
+
+{
+
+}
+
+### apiGetSecretaries
+GET {{apiGetSecretaries}}
+Content-Type: application/json
+
+{
+
+}
+
+
+### apiNewDoctor
+POST {{apiNewDoctor}}
+Content-Type: application/json
+
+{
+    "email" : "eduardovillela@gmail.com",
+    "name" : "Pruebasp3 Villela",
+    "password" : "123456",
+    "birthDate" : "11/10/2020",
+    "rfc" : "2383495ycz",
+    "curp" : "bagr04592349",
+    "degree" : "654321"
+
+}
+### apiNewSecretary
+POST {{apiNewSecretary}}
+Content-Type: application/json
+
+{
+    "email" : "secretarioalvavlav@gmail.com",
+    "name" : "Pruebasp3 Villela",
+    "password" : "123456",
+    "birthDate" : "05/05/2020",
+    "rfc" : "2383495ycz",
+    "curp" : "bagr04592349"
+
+}
