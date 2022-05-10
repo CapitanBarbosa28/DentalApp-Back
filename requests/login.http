@@ -1,0 +1,26 @@
+@apiLogin                                       = http://localhost:8080/api/auth/login
+
+### apiLogin
+POST {{apiLogin}}
+Content-Type: application/json
+
+{
+    "email":"doctorSP@gmail.com",
+    "password":"123456"
+}
+### credenciales admin
+POST {{apiLogin}}
+Content-Type: application/json
+
+{
+    "email":"raul.rrbg@gmail.com",
+    "password":"admin"
+}
+### credenciales admin
+POST {{apiLogin}}
+Content-Type: application/json
+
+{
+    "email":"pruebaSec@gmail.com",
+    "password":"secretaria"
+}
