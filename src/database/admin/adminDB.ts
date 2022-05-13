@@ -1,18 +1,18 @@
-import { Doctor } from 'src/classes/Doctor';
-import { Secretary } from 'src/classes/Secretary';
+import { DBRequest } from '../../classes/DBRequest';
+//import { Doctor } from 'src/classes/Doctor';
+import { Doctor } from '@Classes/Doctor';
+import { Secretary } from '@Classes/Secretary';
 import { makeQuery } from '../connection';
+import { statusRequest } from 'src/interfaces/StatusRequest';
 
-type statusRequest = {
-    result : boolean,
-    message? : string,
-    data? : any,
-}
-export class AdminDB {
-    private status : statusRequest = {
-        result : false,
-    };
+
+export class AdminDB extends DBRequest{
+    
+    constructor(){
+        super();
+    }
     // POST
-    async createDoctor( doctor : Doctor ) : Promise<statusRequest> {
+    async createDoctor( doctor : Doctor ) : Promise<statusRequest<any>> {
         const {name, email, password, birthDate, rfc, curp, degree } = doctor.getInfo();
         
         const data = await makeQuery(` exec create_doctor  '${email}', '${name}', '${password}', '${birthDate}', '${rfc}', '${curp}', '${degree}' `);
@@ -28,7 +28,7 @@ export class AdminDB {
 
     }
     // POST
-    async deleteDoctor(userID : number) : Promise<statusRequest>  {
+    async deleteDoctor(userID : number) : Promise<statusRequest<any>>  {
 
         const data = await makeQuery(`
             UPDATE [User]
@@ -48,7 +48,7 @@ export class AdminDB {
 
     }
     // POST
-    async activeDoctor(userID : number) : Promise<statusRequest>  {
+    async activeDoctor(userID : number) : Promise<statusRequest<any>>  {
         const data = await makeQuery(`
             UPDATE [User]
             SET is_active=1
@@ -65,18 +65,18 @@ export class AdminDB {
         }
     }
     //UPDATE
-    async updateDoctor() : Promise<statusRequest>  {
+    async updateDoctor() : Promise<statusRequest<any>>  {
         return this.status;
 
     }
     // GET
-    async getAllDoctors() : Promise<statusRequest>  {
+    async getAllDoctors() : Promise<statusRequest<any>>  {
         return this.status;
 
     }
 
 
-    async createSecretary(secretary : Secretary) : Promise<statusRequest>  {
+    async createSecretary(secretary : Secretary) : Promise<statusRequest<any>>  {
         const {name, email, password, birthDate, rfc, curp } = secretary.getInfo();
         
         const data = await makeQuery(` exec create_Secretary  '${email}', '${name}', '${password}', '${birthDate}', '${rfc}', '${curp}' `);
@@ -92,15 +92,15 @@ export class AdminDB {
         }
         
     }
-    async getAllSecretaries() : Promise<statusRequest>  {
+    async getAllSecretaries() : Promise<statusRequest<any>>  {
         return this.status;
 
     }
-    async updateSecretary() : Promise<statusRequest>  {
+    async updateSecretary() : Promise<statusRequest<any>>  {
         return this.status;
 
     }
-    async deleteSecretary() : Promise<statusRequest>  {
+    async deleteSecretary() : Promise<statusRequest<any>>  {
         return this.status;
 
     }
